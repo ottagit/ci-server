@@ -30,6 +30,7 @@ workflows:
           requires:
             - hold-apply
       - hold-destroy:
+          persist-workspace: true
           type: approval
           requires:
             - terraform/apply
