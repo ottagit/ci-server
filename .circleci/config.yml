@@ -27,8 +27,18 @@ workflows:
       - terraform/apply:
           attach-workspace: true
           context: terraone
+          persist-workspace: true
+          requires:
+            - hold-apply
+      - hold-destroy:
+          type: approval
+          requires:
+            - terraform/plan
+      - terraform/destroy:
+          attach-workspace: true
+          context: terraone
           filters:
             branches:
               only: main
           requires:
-            - hold-apply
+            - hold-destroy
