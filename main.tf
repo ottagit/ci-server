@@ -13,7 +13,7 @@ provider "aws" {
 module "jenkins_server" {
   source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.0.3"
 
-  ami_name          = "Jenkins instance"
+  ami_name          = "Jenkins Instance"
   ami_id            = "ami-0230bd60aa48260c6"
   ami_key_pair_name = "testenv"
 }
