@@ -34,7 +34,7 @@ workflows:
           requires:
             - terraform/apply
       - terraform/destroy:
-          persist-workspace: true
+          attach-workspace: true
           context: terraone
           filters:
             branches:
