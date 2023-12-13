@@ -25,7 +25,6 @@ workflows:
           requires:
             - terraform/plan
       - terraform/apply:
-          attach-workspace: true
           context: terraone
           persist-workspace: true
           requires:
