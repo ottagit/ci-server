@@ -33,12 +33,10 @@ workflows:
       - hold-destroy:
           type: approval
           requires:
-            - terraform/plan
+            - terraform/apply
       - terraform/destroy:
           attach-workspace: true
           context: terraone
           filters:
             branches:
               only: main
-          requires:
-            - terraform/apply
