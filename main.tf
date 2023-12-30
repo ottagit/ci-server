@@ -16,7 +16,7 @@ module "jenkins_server" {
   ami_name          = "Jenkins Instance"
   ami_id            = "ami-0230bd60aa48260c6"
   ami_key_pair_name = "testenv"
-  name = "jenkins-instance"
+  name              = "jenkins-instance"
 }
 
 terraform {
