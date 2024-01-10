@@ -11,12 +11,13 @@ provider "aws" {
 }
 
 module "jenkins_server" {
-  source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.0.11"
+  source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.0.12"
 
   ami_name          = "Jenkins Instance"
   ami_id            = "ami-0230bd60aa48260c6"
   ami_key_pair_name = "testenv"
   name              = "jenkins-instance-role"
+  dynamo_db_table   = "terraone-locks"
 }
 
 terraform {
@@ -26,7 +27,7 @@ terraform {
     bucket = "batoto-bitange"
     region = "us-east-1"
 
-    dynamodb_table = "terraone-locks"
+    dynamodb_table = module.jenkins_server.dynamo_db_table
     encrypt        = true
   }
 }
