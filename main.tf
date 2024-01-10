@@ -27,7 +27,7 @@ terraform {
     bucket = "batoto-bitange"
     region = "us-east-1"
 
-    dynamodb_table = module.jenkins_server.dynamo_db_table
-    encrypt        = true
+    dynamodb_table =  "terraone-locks"
+    encrypt        =  true
   }
 }
