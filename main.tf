@@ -19,7 +19,7 @@ module "jenkins_server" {
   name              = "jenkins-instance-role"
   dynamo_db_table   = "terraone-locks"
   s3_bucket_name    = "batoto-bitange"
-  path_to_key       = "global/s3/terraform-jenkins.tfstate"
+  path_to_key       = "global/s3/terraformjenkins.tfstate"
 }
 
 terraform {
