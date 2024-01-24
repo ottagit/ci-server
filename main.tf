@@ -11,15 +11,11 @@ provider "aws" {
 }
 
 module "jenkins_server" {
-  source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.1.2"
+  source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.1.7"
 
   ami_name          = "Jenkins Instance"
   ami_id            = "ami-0230bd60aa48260c6"
   ami_key_pair_name = "testenv"
-  name              = "jenkins-instance-role"
-  dynamo_db_table   = "terraone-locks"
-  s3_bucket_name    = "batoto-bitange"
-  path_to_key       = "global/s3/terraformjenkins.tfstate"
 }
 
 terraform {
