@@ -21,7 +21,6 @@ module "jenkins_server" {
   dynamo_db_table = "terraone-locks"
   s3_bucket_name  = "batoto-bitange"
   path_to_key     = "stage/ci-servers/jenkins/terraform.tfstate"
-  provider-name   = "token.actions.githubusercontent.com"
 }
 
 terraform {
