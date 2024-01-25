@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 module "jenkins_server" {
-  source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.2.1"
+  source = "github.com/ottagit/modules//ci-cd/jenkins-server?ref=v0.2.2"
 
   ami_name          = "Jenkins Instance"
   ami_id            = "ami-0230bd60aa48260c6"
@@ -21,6 +21,7 @@ module "jenkins_server" {
   dynamo_db_table = "terraone-locks"
   s3_bucket_name  = "batoto-bitange"
   path_to_key     = "stage/ci-servers/jenkins/terraform.tfstate"
+  provider-name   = "token.actions.githubusercontent.com"
 }
 
 terraform {
